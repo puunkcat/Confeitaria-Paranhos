@@ -8,12 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* RESET E CORES */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         :root { --petroleo: #0b3d45; --dourado: #c5a059; --whats: #25d366; }
-        body { background-color: #f8f9fa; color: #333; overflow-x: hidden; }
+        body { background-color: #f8f9fa; color: #333; overflow-x: hidden; width: 100%; }
 
-        /* HEADER CENTRALIZADO */
         header {
             background-color: var(--petroleo);
             padding: 15px 0;
@@ -32,7 +30,6 @@
 
         .logo-box img { width: 100%; height: auto; display: block; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.4)); }
 
-        /* HERO */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
                         url('https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?q=80&w=1374') center/cover;
@@ -56,7 +53,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        /* SEÇÃO E CARDS */
         .secao { padding: 50px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
         
@@ -69,7 +65,6 @@
         }
         .card i { font-size: 45px; color: var(--petroleo); margin-bottom: 15px; display: block; }
 
-        /* REDES SOCIAIS */
         .redes { background: white; padding: 40px 20px; border-radius: 20px; margin: 40px auto; max-width: 850px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
         .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; margin-top: 25px; }
 
@@ -94,7 +89,6 @@
 
         footer { background-color: var(--petroleo); color: white; padding: 40px 20px; text-align: center; }
 
-        /* MOBILE */
         @media (max-width: 768px) {
             .logo-box { max-width: 85%; }
             .hero h2 { font-size: 26px; }
@@ -142,7 +136,7 @@
                 <a href="https://www.facebook.com/Confeitariaparanhoss/" class="social-btn face" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
                 <a href="https://www.tiktok.com/@confeitariaparanhos" class="social-btn tt" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
                 
-                <a href="https://www.google.com/maps/search/?api=1&query=Estrada+Santa+Eugênia+702+Paciência+Rio+de+Janeiro" class="social-btn maps" target="_blank">
+                <a href="https://www.google.com/maps/search/?api=1&query=Confeitaria+Paranhos+e+Padaria+Estrada+Santa+Eugênia+702+Paciência" class="social-btn maps" target="_blank">
                     <i class="fas fa-map-marker-alt"></i> Localização
                 </a>
             </div>
