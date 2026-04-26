@@ -6,47 +6,52 @@
     <title>Confeitaria Paranhos - Oficial</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
+        /* RESET GERAL */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
         :root {
             --petroleo: #0b3d45;
             --dourado: #c5a059;
             --whats: #25d366;
         }
-        body { background-color: #f8f9fa; color: #333; overflow-x: hidden; }
 
+        body { background-color: #f8f9fa; color: #333; overflow-x: hidden; width: 100%; }
+
+        /* HEADER E LOGO CENTRALIZADA */
         header {
             background-color: var(--petroleo);
-            padding: 10px 20px;
-            text-align: center;
+            padding: 30px 15px;
             border-bottom: 4px solid var(--dourado);
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 180px;
+            width: 100%;
+            min-height: 200px;
         }
 
         .logo-box {
-            width: 350px;
-            height: 150px;
-            overflow: hidden;
+            width: 100%;
+            max-width: 450px; /* Largura maior para a logo nova */
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .logo-box img {
-            width: 150%; 
-            height: 150%;
+            width: 100%;
+            height: auto;
+            display: block;
             object-fit: contain;
-            object-position: 40% center; 
-            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.4));
+            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.3));
         }
 
+        /* HERO SECTION */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
                         url('https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?q=80&w=1374') center/cover;
-            padding: 90px 20px;
+            padding: 80px 20px;
             text-align: center;
             color: white;
         }
@@ -65,42 +70,39 @@
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             margin-top: 20px;
-            transition: 0.2s ease-in-out;
+            transition: 0.3s ease;
         }
 
+        /* SEÇÃO ESPECIALIDADES COM EFEITO ZOOM */
         .secao { padding: 50px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
+        
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 25px;
             margin-top: 30px;
         }
-        
-        /* ADICIONADO O EFEITO DE ZOOM AQUI */
+
         .card {
             background: white;
-            padding: 30px;
+            padding: 35px;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             border-top: 5px solid var(--dourado);
-            transition: transform 0.3s ease; /* Tempo da animação */
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+            cursor: pointer;
         }
 
+        /* O ZOOM QUE VOCÊ PEDIU */
         .card:hover {
-            transform: scale(1.05); /* O zoom de 5% */
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: scale(1.08);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
         }
 
-        .card i { font-size: 40px; color: var(--petroleo); margin-bottom: 15px; display: block; }
+        .card i { font-size: 45px; color: var(--petroleo); margin-bottom: 15px; display: block; }
         .emoji-mobile { display: none; font-size: 50px; margin-bottom: 15px; }
 
-        @media (max-width: 768px) {
-            .card i { display: none; }
-            .emoji-mobile { display: block; }
-            .hero h2 { font-size: 28px; }
-            .social-grid { grid-template-columns: 1fr 1fr; }
-        }
-
+        /* REDES SOCIAIS */
         .redes {
             background-color: #ffffff;
             padding: 40px 20px;
@@ -109,39 +111,52 @@
             max-width: 800px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
+
         .social-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
+
         .social-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            padding: 12px;
+            gap: 10px;
+            padding: 14px;
             border-radius: 8px;
             color: white;
             text-decoration: none;
             font-weight: 600;
             transition: 0.2s;
         }
-        
-        .social-btn:hover, .btn-whats:hover { transform: scale(1.05); }
 
         .insta { background: linear-gradient(45deg, #f09433, #bc1888); }
         .face { background-color: #1877f2; }
         .tt { background-color: #000; }
         .maps { background-color: #ea4335; }
 
-        footer { background-color: var(--petroleo); color: white; padding: 30px; text-align: center; font-size: 14px; }
+        .social-btn:hover, .btn-whats:hover { transform: scale(1.05); opacity: 0.9; }
+
+        footer { background-color: var(--petroleo); color: white; padding: 40px 20px; text-align: center; }
+
+        /* AJUSTES MOBILE */
+        @media (max-width: 768px) {
+            header { padding: 25px 10px; min-height: 160px; }
+            .logo-box { max-width: 85%; }
+            .card i { display: none; }
+            .emoji-mobile { display: block; }
+            .hero h2 { font-size: 26px; }
+            .social-grid { grid-template-columns: 1fr 1fr; }
+        }
     </style>
 </head>
 <body>
+
     <header>
         <div class="logo-box">
-            <img src="paranhos logo.png" alt="Logo Confeitaria Paranhos">
+            <img src="logo paranhos.png" alt="Logo Paranhos Cake's">
         </div>
     </header>
 
@@ -154,7 +169,7 @@
     </section>
 
     <div class="secao">
-        <h2 style="color: var(--petroleo); font-size: 28px;">Nossas Especialidades</h2>
+        <h2 style="color: var(--petroleo); font-size: 30px; font-family: 'Playfair Display', serif;">Nossas Especialidades</h2>
         <div class="grid">
             <div class="card">
                 <i class="fas fa-box-open"></i>
@@ -182,20 +197,21 @@
                 <a href="https://www.instagram.com/confeitariaparanhos" class="social-btn insta" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
                 <a href="https://www.facebook.com/Confeitariaparanhoss/" class="social-btn face" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
                 <a href="https://www.tiktok.com/@confeitariaparanhos" class="social-btn tt" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-               <a href="https://www.google.com/maps/search/?api=1&query=Confeitaria+Paranhos+Padaria+Paciencia+RJ&query_place_id=ChIJxzOxeSrlmwARNZpx8gYbUQk" class="social-btn maps" target="_blank">
-   <i class="fas fa-map-marker-alt"></i> Localização
-</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Confeitaria+Paranhos+Paciência" class="social-btn maps" target="_blank">
+                    <i class="fas fa-map-marker-alt"></i> Localização
+                </a>
             </div>
         </div>
     </div>
 
-    <div style="text-align: center; padding-bottom: 50px;">
+    <div style="text-align: center; padding: 40px 20px; background: #f1f1f1;">
         <p>📍 Estrada Santa Eugênia, 702 - Paciência, RJ</p>
-        <p>📞 (21) 98797-8267</p>
+        <p style="margin-top: 10px;">📞 (21) 98797-8267</p>
     </div>
 
     <footer>
         <p>© 2026 Confeitaria Paranhos - Todos os direitos reservados.</p>
     </footer>
+
 </body>
 </html>
