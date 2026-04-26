@@ -8,17 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
+        /* RESET E CORES */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        
-        :root {
-            --petroleo: #0b3d45;
-            --dourado: #c5a059;
-            --whats: #25d366;
-        }
+        :root { --petroleo: #0b3d45; --dourado: #c5a059; --whats: #25d366; }
+        body { background-color: #f8f9fa; color: #333; overflow-x: hidden; }
 
-        body { background-color: #f8f9fa; color: #333; overflow-x: hidden; width: 100%; }
-
-        /* HEADER - CENTRALIZAÇÃO DIVINA */
+        /* HEADER CENTRALIZADO */
         header {
             background-color: var(--petroleo);
             padding: 15px 0;
@@ -26,26 +21,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
         }
 
         .logo-box {
             display: flex;
             justify-content: center;
-            align-items: center;
             width: 90%;
-            max-width: 400px; /* Logo grande e imponente no Computador */
+            max-width: 400px;
         }
 
-        .logo-box img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: contain;
-            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.4));
-        }
+        .logo-box img { width: 100%; height: auto; display: block; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.4)); }
 
-        /* HERO SECTION */
+        /* HERO */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
                         url('https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?q=80&w=1374') center/cover;
@@ -53,8 +40,7 @@
             text-align: center;
             color: white;
         }
-
-        .hero h2 { font-size: 32px; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
+        .hero h2 { font-size: 32px; font-family: 'Playfair Display', serif; }
 
         .btn-whats {
             display: inline-flex;
@@ -66,52 +52,26 @@
             border-radius: 50px;
             font-weight: bold;
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             margin-top: 15px;
-            transition: 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
-        
-        .btn-whats:hover { transform: scale(1.05); background-color: #20ba5a; }
 
-        /* ESPECIALIDADES */
+        /* SEÇÃO E CARDS */
         .secao { padding: 50px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
         
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
         .card {
             background: white;
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
             border-top: 5px solid var(--dourado);
-            transition: 0.3s ease;
         }
-
-        .card:hover { transform: translateY(-10px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
         .card i { font-size: 45px; color: var(--petroleo); margin-bottom: 15px; display: block; }
-        .emoji-mobile { display: none; font-size: 50px; margin-bottom: 15px; }
 
         /* REDES SOCIAIS */
-        .redes {
-            background-color: #ffffff;
-            padding: 40px 20px;
-            border-radius: 20px;
-            margin: 40px auto;
-            max-width: 850px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-        }
-
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 15px;
-            margin-top: 25px;
-        }
+        .redes { background: white; padding: 40px 20px; border-radius: 20px; margin: 40px auto; max-width: 850px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
+        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; margin-top: 25px; }
 
         .social-btn {
             display: flex;
@@ -125,8 +85,7 @@
             font-weight: 600;
             transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-
-        .social-btn:hover { transform: scale(1.1); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .social-btn:hover { transform: scale(1.1); }
 
         .insta { background: linear-gradient(45deg, #f09433, #bc1888); }
         .face { background-color: #1877f2; }
@@ -135,14 +94,9 @@
 
         footer { background-color: var(--petroleo); color: white; padding: 40px 20px; text-align: center; }
 
-        /* AJUSTES MOBILE EXTREMOS */
+        /* MOBILE */
         @media (max-width: 768px) {
-            header { padding: 15px 0; }
-            .logo-box { 
-                max-width: 85%; /* Logo GIGANTE e centralizada no celular */
-            }
-            .card i { display: none; }
-            .emoji-mobile { display: block; }
+            .logo-box { max-width: 85%; }
             .hero h2 { font-size: 26px; }
             .social-grid { grid-template-columns: 1fr 1fr; }
         }
@@ -152,13 +106,12 @@
 
     <header>
         <div class="logo-box">
-            <img src="logo paranhos.png" alt="Logo Paranhos Cake's">
+            <img src="logo paranhos.png" alt="Logo Paranhos">
         </div>
     </header>
 
     <section class="hero">
         <h2>Encomendas e Kit Festas</h2>
-        <p>O sabor que encanta Paciência e o melhor Café da Manhã do Rio.</p>
         <a href="https://wa.me/5521987978267" class="btn-whats" target="_blank">
             <i class="fab fa-whatsapp"></i> PEDIR PELO WHATSAPP
         </a>
@@ -169,42 +122,36 @@
         
         <div class="grid">
             <div class="card">
-                <i class="fas fa-box-open"></i><span class="emoji-mobile">🎁</span>
+                <i class="fas fa-box-open"></i>
                 <h3>Kit Festas</h3>
-                <p>Kits prontos a entregar todos os dias!</p>
             </div>
             <div class="card">
-                <i class="fas fa-coffee"></i><span class="emoji-mobile">☕</span>
+                <i class="fas fa-coffee"></i>
                 <h3>Café da Manhã</h3>
-                <p>Pães fresquinhos a partir das 7h.</p>
             </div>
             <div class="card">
-                <i class="fas fa-utensils"></i><span class="emoji-mobile">🍰</span>
+                <i class="fas fa-utensils"></i>
                 <h3>Buffet Completo</h3>
-                <p>Variedade de bolos, frios e frutas!</p>
             </div>
         </div>
 
         <div class="redes">
-            <h3 style="color: var(--petroleo); margin-bottom: 10px; font-family: 'Playfair Display', serif;">Redes Sociais</h3>
+            <h3 style="color: var(--petroleo); font-family: 'Playfair Display', serif;">Redes Sociais</h3>
             <div class="social-grid">
                 <a href="https://www.instagram.com/confeitariaparanhos" class="social-btn insta" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
                 <a href="https://www.facebook.com/Confeitariaparanhoss/" class="social-btn face" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
                 <a href="https://www.tiktok.com/@confeitariaparanhos" class="social-btn tt" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-              <a href="https://www.google.com/maps/search/?api=1&query=Confeitaria+Paranhos+e+Padaria&query_place_id=ChIJxzOxeSrlmwARNZpx8gYbUQk" class="social-btn maps" target="_blank">
+                
+                <a href="https://www.google.com/maps/search/?api=1&query=Estrada+Santa+Eugênia+702+Paciência+Rio+de+Janeiro" class="social-btn maps" target="_blank">
                     <i class="fas fa-map-marker-alt"></i> Localização
                 </a>
             </div>
         </div>
     </div>
 
-    <div style="text-align: center; padding: 40px 20px; background: #f1f1f1; border-top: 1px solid #ddd;">
-        <p style="font-weight: 600; color: var(--petroleo);">📍 Estrada Santa Eugênia, 702 - Paciência, RJ</p>
-        <p style="margin-top: 8px;">📞 (21) 98797-8267</p>
-    </div>
-
     <footer>
-        <p>© 2026 Confeitaria Paranhos - Excelência em cada pedaço.</p>
+        <p>📍 Estrada Santa Eugênia, 702 - Paciência, RJ</p>
+        <p style="margin-top: 10px; font-size: 12px; opacity: 0.7;">© 2026 Confeitaria Paranhos</p>
     </footer>
 
 </body>
