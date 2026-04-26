@@ -19,24 +19,23 @@
 
         body { background-color: #f8f9fa; color: #333; overflow-x: hidden; width: 100%; }
 
-        /* HEADER ULTRA COMPACTO */
+        /* HEADER CENTRALIZADO */
         header {
             background-color: var(--petroleo);
-            padding: 5px 0; /* Espaçamento mínimo */
+            padding: 10px 0;
             border-bottom: 3px solid var(--dourado);
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
-            height: auto; /* Deixa o conteúdo ditar a altura */
         }
 
         .logo-box {
-            width: 100%;
-            max-width: 240px; /* Tamanho controlado para não gritar */
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100%;
+            max-width: 250px;
         }
 
         .logo-box img {
@@ -44,8 +43,6 @@
             height: auto;
             display: block;
             object-fit: contain;
-            /* Removemos margens extras que podem vir da imagem */
-            margin: 0; 
             filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
         }
 
@@ -66,7 +63,7 @@
             gap: 10px;
             background-color: var(--whats);
             color: white;
-            padding: 15px 30px;
+            padding: 16px 32px;
             border-radius: 50px;
             font-weight: bold;
             text-decoration: none;
@@ -74,8 +71,10 @@
             margin-top: 15px;
             transition: 0.3s ease;
         }
+        
+        .btn-whats:hover { transform: scale(1.05); }
 
-        /* SEÇÃO ESPECIALIDADES COM ZOOM */
+        /* ESPECIALIDADES COM ZOOM */
         .secao { padding: 40px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
         
         .grid {
@@ -91,7 +90,7 @@
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             border-top: 5px solid var(--dourado);
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             cursor: pointer;
         }
 
@@ -103,7 +102,7 @@
         .card i { font-size: 40px; color: var(--petroleo); margin-bottom: 15px; display: block; }
         .emoji-mobile { display: none; font-size: 45px; margin-bottom: 15px; }
 
-        /* REDES SOCIAIS */
+        /* REDES SOCIAIS COM EFEITO DE ZOOM */
         .redes {
             background-color: #ffffff;
             padding: 30px 20px;
@@ -130,8 +129,16 @@
             color: white;
             text-decoration: none;
             font-weight: 600;
-            transition: 0.2s;
             font-size: 14px;
+            /* O ZOOM COMEÇA AQUI: */
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+        }
+
+        /* QUANDO PASSAR O MOUSE NO BOTÃO DA REDE SOCIAL */
+        .social-btn:hover {
+            transform: scale(1.1); /* Zoom de 10% */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            filter: brightness(1.1);
         }
 
         .insta { background: linear-gradient(45deg, #f09433, #bc1888); }
@@ -139,14 +146,12 @@
         .tt { background-color: #000; }
         .maps { background-color: #ea4335; }
 
-        .social-btn:hover, .btn-whats:hover { transform: scale(1.05); opacity: 0.9; }
-
         footer { background-color: var(--petroleo); color: white; padding: 30px 20px; text-align: center; }
 
         /* AJUSTES MOBILE */
         @media (max-width: 768px) {
-            header { padding: 5px 0; }
-            .logo-box { max-width: 170px; }
+            header { padding: 8px 0; }
+            .logo-box { max-width: 180px; }
             .card i { display: none; }
             .emoji-mobile { display: block; }
             .hero h2 { font-size: 24px; }
@@ -174,20 +179,17 @@
         <h2 style="color: var(--petroleo); font-size: 28px; font-family: 'Playfair Display', serif;">Nossas Especialidades</h2>
         <div class="grid">
             <div class="card">
-                <i class="fas fa-box-open"></i>
-                <span class="emoji-mobile">🎁</span>
+                <i class="fas fa-box-open"></i><span class="emoji-mobile">🎁</span>
                 <h3>Kit Festas</h3>
                 <p>Kits prontos a entregar todos os dias!</p>
             </div>
             <div class="card">
-                <i class="fas fa-coffee"></i>
-                <span class="emoji-mobile">☕</span>
+                <i class="fas fa-coffee"></i><span class="emoji-mobile">☕</span>
                 <h3>Café da Manhã</h3>
                 <p>Pães fresquinhos a partir das 7h.</p>
             </div>
             <div class="card">
-                <i class="fas fa-utensils"></i>
-                <span class="emoji-mobile">🍰</span>
+                <i class="fas fa-utensils"></i><span class="emoji-mobile">🍰</span>
                 <h3>Buffet Completo</h3>
                 <p>Variedade de bolos, frios e frutas!</p>
             </div>
@@ -199,16 +201,16 @@
                 <a href="https://www.instagram.com/confeitariaparanhos" class="social-btn insta" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
                 <a href="https://www.facebook.com/Confeitariaparanhoss/" class="social-btn face" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
                 <a href="https://www.tiktok.com/@confeitariaparanhos" class="social-btn tt" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-                <a href="https://www.google.com/maps/search/?api=1&query=Confeitaria+Paranhos+e+Padaria+Estrada+Santa+Eugênia+702" class="social-btn maps" target="_blank">
+                <a href="https://www.google.com/maps/search/?api=1&query=Confeitaria+Paranhos+e+Padaria&query_place_id=ChIJxzOxeSrlmwARNZpx8gYbUQk" class="social-btn maps" target="_blank">
                     <i class="fas fa-map-marker-alt"></i> Localização
                 </a>
             </div>
         </div>
     </div>
 
-    <div style="text-align: center; padding: 30px 20px; background: #f1f1f1;">
+    <div style="text-align: center; padding: 30px 20px; background: #f1f1f1; border-top: 1px solid #ddd;">
         <p>📍 Estrada Santa Eugênia, 702 - Paciência, RJ</p>
-        <p style="margin-top: 8px;">📞 (21) 98797-8267</p>
+        <p style="margin-top: 5px;">📞 (21) 98797-8267</p>
     </div>
 
     <footer>
