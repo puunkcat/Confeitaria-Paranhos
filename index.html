@@ -16,71 +16,58 @@
             background-color: var(--petroleo);
             padding: 15px 0;
             border-bottom: 3px solid var(--dourado);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: flex; justify-content: center; align-items: center;
         }
 
-        .logo-box {
-            display: flex;
-            justify-content: center;
-            width: 90%;
-            max-width: 400px;
-        }
-
+        .logo-box { display: flex; justify-content: center; width: 90%; max-width: 400px; }
         .logo-box img { width: 100%; height: auto; display: block; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.4)); }
 
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
                         url('https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?q=80&w=1374') center/cover;
-            padding: 60px 20px;
-            text-align: center;
-            color: white;
+            padding: 60px 20px; text-align: center; color: white;
         }
         .hero h2 { font-size: 32px; font-family: 'Playfair Display', serif; }
 
         .btn-whats {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background-color: var(--whats);
-            color: white;
-            padding: 18px 38px;
-            border-radius: 50px;
-            font-weight: bold;
-            text-decoration: none;
-            margin-top: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: inline-flex; align-items: center; gap: 10px; background-color: var(--whats);
+            color: white; padding: 18px 38px; border-radius: 50px; font-weight: bold;
+            text-decoration: none; margin-top: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: 0.3s ease;
         }
+        .btn-whats:hover { transform: scale(1.05); }
 
         .secao { padding: 50px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 30px; }
         
+        /* ZOOM NOS CARDS */
         .card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--dourado);
+            background: white; padding: 40px; border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-top: 5px solid var(--dourado);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .card:hover { 
+            transform: scale(1.1); /* ZOOM AQUI */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
         .card i { font-size: 45px; color: var(--petroleo); margin-bottom: 15px; display: block; }
 
         .redes { background: white; padding: 40px 20px; border-radius: 20px; margin: 40px auto; max-width: 850px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); }
         .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; margin-top: 25px; }
 
+        /* ZOOM NAS REDES SOCIAIS */
         .social-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 15px;
-            border-radius: 12px;
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            padding: 15px; border-radius: 12px; color: white; text-decoration: none;
+            font-weight: 600; 
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
         }
-        .social-btn:hover { transform: scale(1.1); }
+        .social-btn:hover { 
+            transform: scale(1.15); /* ZOOM MAIOR NAS REDES */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            filter: brightness(1.1);
+        }
 
         .insta { background: linear-gradient(45deg, #f09433, #bc1888); }
         .face { background-color: #1877f2; }
@@ -113,19 +100,21 @@
 
     <div class="secao">
         <h2 style="color: var(--petroleo); font-size: 32px; font-family: 'Playfair Display', serif;">Nossas Especialidades</h2>
-        
         <div class="grid">
             <div class="card">
                 <i class="fas fa-box-open"></i>
                 <h3>Kit Festas</h3>
+                <p>Combos deliciosos para sua festa.</p>
             </div>
             <div class="card">
                 <i class="fas fa-coffee"></i>
                 <h3>Café da Manhã</h3>
+                <p>O melhor pãozinho de Paciência.</p>
             </div>
             <div class="card">
                 <i class="fas fa-utensils"></i>
                 <h3>Buffet Completo</h3>
+                <p>Tudo para o seu evento brilhar.</p>
             </div>
         </div>
 
@@ -137,7 +126,6 @@
                 <a href="https://www.tiktok.com/@confeitariaparanhos" class="social-btn tt" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
                 <a href="https://www.google.com/maps/place/?q=place_id:ChIJxzOxeSrlmwARNZpx8gYbUQk" class="social-btn maps" target="_blank">
                     <i class="fas fa-map-marker-alt"></i> Localização
-            </div>
                 </a>
             </div>
         </div>
@@ -145,7 +133,6 @@
 
     <footer>
         <p>📍 Estrada Santa Eugênia, 702 - Paciência, RJ</p>
-        <p style="margin-top: 10px; font-size: 12px; opacity: 0.7;">© 2026 Confeitaria Paranhos</p>
     </footer>
 
 </body>
