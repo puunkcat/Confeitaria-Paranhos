@@ -19,21 +19,21 @@
 
         body { background-color: #f8f9fa; color: #333; overflow-x: hidden; width: 100%; }
 
-        /* HEADER E LOGO CENTRALIZADA */
+        /* HEADER ULTRA COMPACTO */
         header {
             background-color: var(--petroleo);
-            padding: 30px 15px;
-            border-bottom: 4px solid var(--dourado);
+            padding: 5px 0; /* Espaçamento mínimo */
+            border-bottom: 3px solid var(--dourado);
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
-            min-height: 200px;
+            height: auto; /* Deixa o conteúdo ditar a altura */
         }
 
         .logo-box {
             width: 100%;
-            max-width: 450px; /* Largura maior para a logo nova */
+            max-width: 240px; /* Tamanho controlado para não gritar */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -44,19 +44,21 @@
             height: auto;
             display: block;
             object-fit: contain;
-            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.3));
+            /* Removemos margens extras que podem vir da imagem */
+            margin: 0; 
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
         }
 
         /* HERO SECTION */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
                         url('https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?q=80&w=1374') center/cover;
-            padding: 80px 20px;
+            padding: 60px 20px;
             text-align: center;
             color: white;
         }
 
-        .hero h2 { font-size: 32px; margin-bottom: 15px; font-family: 'Playfair Display', serif; }
+        .hero h2 { font-size: 28px; margin-bottom: 10px; font-family: 'Playfair Display', serif; }
 
         .btn-whats {
             display: inline-flex;
@@ -64,17 +66,17 @@
             gap: 10px;
             background-color: var(--whats);
             color: white;
-            padding: 18px 35px;
+            padding: 15px 30px;
             border-radius: 50px;
             font-weight: bold;
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            margin-top: 20px;
+            margin-top: 15px;
             transition: 0.3s ease;
         }
 
-        /* SEÇÃO ESPECIALIDADES COM EFEITO ZOOM */
-        .secao { padding: 50px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
+        /* SEÇÃO ESPECIALIDADES COM ZOOM */
+        .secao { padding: 40px 20px; max-width: 1100px; margin: 0 auto; text-align: center; }
         
         .grid {
             display: grid;
@@ -85,7 +87,7 @@
 
         .card {
             background: white;
-            padding: 35px;
+            padding: 30px;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             border-top: 5px solid var(--dourado);
@@ -93,29 +95,28 @@
             cursor: pointer;
         }
 
-        /* O ZOOM QUE VOCÊ PEDIU */
         .card:hover {
             transform: scale(1.08);
             box-shadow: 0 12px 25px rgba(0,0,0,0.15);
         }
 
-        .card i { font-size: 45px; color: var(--petroleo); margin-bottom: 15px; display: block; }
-        .emoji-mobile { display: none; font-size: 50px; margin-bottom: 15px; }
+        .card i { font-size: 40px; color: var(--petroleo); margin-bottom: 15px; display: block; }
+        .emoji-mobile { display: none; font-size: 45px; margin-bottom: 15px; }
 
         /* REDES SOCIAIS */
         .redes {
             background-color: #ffffff;
-            padding: 40px 20px;
+            padding: 30px 20px;
             border-radius: 15px;
-            margin: 40px auto;
+            margin: 30px auto;
             max-width: 800px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .social-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
             margin-top: 20px;
         }
 
@@ -123,13 +124,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            padding: 14px;
+            gap: 8px;
+            padding: 12px;
             border-radius: 8px;
             color: white;
             text-decoration: none;
             font-weight: 600;
             transition: 0.2s;
+            font-size: 14px;
         }
 
         .insta { background: linear-gradient(45deg, #f09433, #bc1888); }
@@ -139,15 +141,15 @@
 
         .social-btn:hover, .btn-whats:hover { transform: scale(1.05); opacity: 0.9; }
 
-        footer { background-color: var(--petroleo); color: white; padding: 40px 20px; text-align: center; }
+        footer { background-color: var(--petroleo); color: white; padding: 30px 20px; text-align: center; }
 
         /* AJUSTES MOBILE */
         @media (max-width: 768px) {
-            header { padding: 25px 10px; min-height: 160px; }
-            .logo-box { max-width: 85%; }
+            header { padding: 5px 0; }
+            .logo-box { max-width: 170px; }
             .card i { display: none; }
             .emoji-mobile { display: block; }
-            .hero h2 { font-size: 26px; }
+            .hero h2 { font-size: 24px; }
             .social-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
@@ -164,18 +166,18 @@
         <h2>Encomendas e Kit Festas</h2>
         <p>O sabor que encanta Paciência e o melhor Café da Manhã do Rio.</p>
         <a href="https://wa.me/5521987978267" class="btn-whats" target="_blank">
-            <i class="fab fa-whatsapp"></i> PEÇA PELO WHATSAPP
+            <i class="fab fa-whatsapp"></i> PEDIR PELO WHATSAPP
         </a>
     </section>
 
     <div class="secao">
-        <h2 style="color: var(--petroleo); font-size: 30px; font-family: 'Playfair Display', serif;">Nossas Especialidades</h2>
+        <h2 style="color: var(--petroleo); font-size: 28px; font-family: 'Playfair Display', serif;">Nossas Especialidades</h2>
         <div class="grid">
             <div class="card">
                 <i class="fas fa-box-open"></i>
                 <span class="emoji-mobile">🎁</span>
                 <h3>Kit Festas</h3>
-                <p>Kits a pronta entrega todos os dias!</p>
+                <p>Kits prontos a entregar todos os dias!</p>
             </div>
             <div class="card">
                 <i class="fas fa-coffee"></i>
@@ -192,21 +194,21 @@
         </div>
 
         <div class="redes">
-            <h3 style="color: var(--petroleo); margin-bottom: 20px;">Siga nossas Redes Sociais</h3>
+            <h3 style="color: var(--petroleo); margin-bottom: 15px;">Siga nossas Redes Sociais</h3>
             <div class="social-grid">
                 <a href="https://www.instagram.com/confeitariaparanhos" class="social-btn insta" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
                 <a href="https://www.facebook.com/Confeitariaparanhoss/" class="social-btn face" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
                 <a href="https://www.tiktok.com/@confeitariaparanhos" class="social-btn tt" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-                <a href="https://www.google.com/maps/search/?api=1&query=Confeitaria+Paranhos+Paciência" class="social-btn maps" target="_blank">
+                <a href="https://www.google.com/maps/search/?api=1&query=Confeitaria+Paranhos+e+Padaria+Estrada+Santa+Eugênia+702" class="social-btn maps" target="_blank">
                     <i class="fas fa-map-marker-alt"></i> Localização
                 </a>
             </div>
         </div>
     </div>
 
-    <div style="text-align: center; padding: 40px 20px; background: #f1f1f1;">
+    <div style="text-align: center; padding: 30px 20px; background: #f1f1f1;">
         <p>📍 Estrada Santa Eugênia, 702 - Paciência, RJ</p>
-        <p style="margin-top: 10px;">📞 (21) 98797-8267</p>
+        <p style="margin-top: 8px;">📞 (21) 98797-8267</p>
     </div>
 
     <footer>
